@@ -12,7 +12,7 @@ document.addEventListener('mouseout', function(e) {
         // 记录拦截日志...
     }
 }, true);  // 关键参数：useCapture=true
-
+```
 ## 安装方法
 （仅支持）手动安装：
 1. 复制完整脚本代码
