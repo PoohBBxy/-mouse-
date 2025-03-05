@@ -19,3 +19,5 @@ document.addEventListener('mouseout', function(e) {
 2. 打开Tampermonkey仪表盘
 3. 点击「+ 新建脚本」
 4. 粘贴代码并保存
+
+## 目前仅支持Chrome浏览器
