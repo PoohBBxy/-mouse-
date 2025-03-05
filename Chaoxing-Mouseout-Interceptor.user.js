@@ -24,7 +24,7 @@
         if (!logContent) return;
 
         const filteredLogs = logs.slice(0, 200) // 取最新200条
-            .filter(log => !(filterPassedLogs && log.includes('[PASS]')));
+           .filter(log => !(filterPassedLogs && log.includes('[PASS]')));
 
         logContent.innerText = filteredLogs.join('\n');
         logContent.scrollTop = 0; // 自动滚动到顶部
@@ -246,7 +246,24 @@
         };
 
         closePanel.onclick = () => logPanel.remove();
-        minimizePanel.onclick = () => logPanel.style.display = 'none';
+
+        // 修改最小化逻辑
+        minimizePanel.onclick = () => {
+            const logBody = document.getElementById('logBody');
+            if (minimized) {
+                logBody.style.display = 'flex';
+                minimizePanel.textContent = '−';
+                logPanel.style.height = '320px'; // 恢复原始高度
+                logPanel.style.minHeight = '320px'; // 恢复最小高度
+            } else {
+                logBody.style.display = 'none';
+                minimizePanel.textContent = '+';
+                const headerHeight = document.getElementById('logHeader').offsetHeight;
+                logPanel.style.height = `${headerHeight}px`; // 设置高度为header的高度
+                logPanel.style.minHeight = `${headerHeight}px`; // 设置最小高度为header的高度
+            }
+            minimized = !minimized;
+        };
 
         // 拖拽功能
         let isDragging = false;
