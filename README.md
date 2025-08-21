@@ -34,7 +34,7 @@ document.addEventListener('mouseout', function(e) {
 
 ---
 
-## ⚠️ 民间制裁警告
+## ⚠️ 制裁警告
 
 男的：鸡鸡短 10 厘米。  
 女的：月经提前 15 天，连来 9 周期。  
